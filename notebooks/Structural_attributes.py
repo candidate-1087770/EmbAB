@@ -318,7 +318,6 @@ class depth():
         df['maxASA'] = maxasa_list
         #calculate and insert relative SASA for each residue
         df['RSA'] = df['SASA_residue']/df['maxASA']
-        #filter for residues with SASA > 0.25 -- NEED TO FIND PAPER THAT RECOMMENDS GREATER THAT 0.25
         surface_residues_df = df[df['RSA'] >= 0.26].reset_index(0)
         
         return surface_residues_df
