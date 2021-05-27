@@ -1,0 +1,14 @@
+library(bio3d)
+
+## Not run: 
+## Read a PDB file from the RCSB online database
+pdb1 <- read.pdb("7bve")
+pdb2 <- read.pdb("7bvf")
+
+## Concat
+new.pdb <- cat.pdb(pdb1, pdb2, rechain=TRUE, renumber=TRUE)
+
+## Write to file
+write.pdb(new.pdb, file="concat2.pdb")
+
+## End(Not run)
